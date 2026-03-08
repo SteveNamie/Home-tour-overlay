@@ -1,140 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home Tour Overlay</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Tour Overlay</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
-<style>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      overflow: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-html, body {
-margin:0;
-width:100%;
-height:100%;
-background:transparent;
-overflow:hidden;
-font-family:Arial, Helvetica, sans-serif;
-}
+    .bar {
+      position: fixed;
+      left: 4%;
+      right: 4%;
+      bottom: 6%;
+      height: 82px;
+      background: rgba(20, 20, 20, 0.58);
+      display: grid;
+      grid-template-columns: 220px 2px 1fr 150px;
+      align-items: center;
+      column-gap: 18px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      color: white;
+    }
 
-/* OVERLAY BAR */
+    .left {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      min-width: 0;
+    }
 
-.bar {
-position:fixed;
-left:0;
-right:0;
-bottom:0;
-height:80px;
+    .name {
+      font-family: 'Allura', cursive;
+      font-size: 24px;
+      color: white;
+      white-space: nowrap;
+    }
 
-background:rgba(20,20,20,.72);
+    .team {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-top: 2px;
+      white-space: nowrap;
+    }
 
-display:grid;
-grid-template-columns:200px 2px 1fr 160px;
-align-items:center;
-column-gap:18px;
+    .divider {
+      width: 2px;
+      height: 46px;
+      background: #c9a24d;
+    }
 
-padding:0 20px;
-box-sizing:border-box;
-color:white;
-}
+    .center {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
 
-/* LEFT SIDE */
+    .address {
+      font-size: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-.left{
-display:flex;
-flex-direction:column;
-line-height:1;
-}
+    .details {
+      font-size: 14px;
+      margin-top: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: rgba(255,255,255,0.92);
+    }
 
-.name{
-font-family:'Allura', cursive;
-font-size:24px;
-color:white;
-white-space:nowrap;
-}
+    .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-width: 0;
+    }
 
-.team{
-font-size:10px;
-letter-spacing:.08em;
-text-transform:uppercase;
-color:rgba(255,255,255,.9);
-margin-top:2px;
-white-space:nowrap;
-}
-
-/* DIVIDER */
-
-.divider{
-width:2px;
-height:46px;
-background:#c9a24d;
-}
-
-/* CENTER */
-
-.center{
-display:flex;
-flex-direction:column;
-justify-content:center;
-min-width:0;
-}
-
-.address{
-font-size:18px;
-font-weight:500;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-}
-
-.details{
-font-size:14px;
-margin-top:3px;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-color:rgba(255,255,255,.92);
-}
-
-/* RIGHT LOGO */
-
-.right{
-display:flex;
-justify-content:flex-end;
-align-items:center;
-}
-
-.right img{
-max-height:52px;
-width:auto;
-display:block;
-}
-
-</style>
+    .right img {
+      max-height: 54px;
+      max-width: 140px;
+      width: auto;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="bar">
+    <div class="left">
+      <div class="name">Jennifer &amp; Steve</div>
+      <div class="team">The Namie Group</div>
+    </div>
 
-<div class="bar">
+    <div class="divider"></div>
 
-<div class="left">
-<div class="name">Jennifer & Steve</div>
-<div class="team">The Namie Group</div>
-</div>
+    <div class="center">
+      <div class="address">742 River Ridge Drive • Decatur, AL</div>
+      <div class="details">3,140 Sq Ft • 4 Beds • 3 Baths • Offered at $525,000</div>
+    </div>
 
-<div class="divider"></div>
-
-<div class="center">
-<div class="address">742 River Ridge Drive • Decatur, AL</div>
-<div class="details">3,140 Sq Ft • 4 Beds • 3 Baths • Offered at $525,000</div>
-</div>
-
-<div class="right">
-<img src="leadingedge.png">
-</div>
-
-</div>
-
+    <div class="right">
+      <img src="leadingedge.png" alt="Leading Edge Logo">
+    </div>
+  </div>
 </body>
 </html>
