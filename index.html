@@ -1,101 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Tour Overlay Test</title>
-  <style>
-    html, body {
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      background: transparent;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Tour Overlay</title>
 
-    .bar {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 100px;
-      background: rgba(0,0,0,0.55);
-      color: white;
-      display: grid;
-      grid-template-columns: 260px 2px 1fr 240px;
-      align-items: center;
-      column-gap: 24px;
-      padding: 0 28px;
-      box-sizing: border-box;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
 
-    .left {
-      line-height: 1.1;
-    }
+<style>
 
-    .name {
-      font-size: 28px;
-      font-weight: 600;
-    }
+html, body {
+margin:0;
+width:100%;
+height:100%;
+background:transparent;
+overflow:hidden;
+font-family:Arial, Helvetica, sans-serif;
+}
 
-    .team {
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      opacity: 0.9;
-    }
+/* OVERLAY BAR */
 
-    .divider {
-      width: 2px;
-      height: 64px;
-      background: #c9a24d;
-    }
+.bar {
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+height:80px;
 
-    .center {
-      line-height: 1.2;
-    }
+background:rgba(20,20,20,.72);
 
-    .address {
-      font-size: 24px;
-      font-weight: 500;
-      white-space: nowrap;
-    }
+display:grid;
+grid-template-columns:200px 2px 1fr 160px;
+align-items:center;
+column-gap:18px;
 
-    .details {
-      font-size: 20px;
-      white-space: nowrap;
-      opacity: 0.92;
-      margin-top: 6px;
-    }
+padding:0 20px;
+box-sizing:border-box;
+color:white;
+}
 
-    .right {
-      text-align: right;
-    }
+/* LEFT SIDE */
 
-    .right img {
-      max-height: 78px;
-      width: auto;
-    }
-  </style>
+.left{
+display:flex;
+flex-direction:column;
+line-height:1;
+}
+
+.name{
+font-family:'Allura', cursive;
+font-size:24px;
+color:white;
+white-space:nowrap;
+}
+
+.team{
+font-size:10px;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:rgba(255,255,255,.9);
+margin-top:2px;
+white-space:nowrap;
+}
+
+/* DIVIDER */
+
+.divider{
+width:2px;
+height:46px;
+background:#c9a24d;
+}
+
+/* CENTER */
+
+.center{
+display:flex;
+flex-direction:column;
+justify-content:center;
+min-width:0;
+}
+
+.address{
+font-size:18px;
+font-weight:500;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+.details{
+font-size:14px;
+margin-top:3px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+color:rgba(255,255,255,.92);
+}
+
+/* RIGHT LOGO */
+
+.right{
+display:flex;
+justify-content:flex-end;
+align-items:center;
+}
+
+.right img{
+max-height:52px;
+width:auto;
+display:block;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="bar">
-    <div class="left">
-      <div class="name">Jennifer &amp; Steve</div>
-      <div class="team">The Namie Group</div>
-    </div>
 
-    <div class="divider"></div>
+<div class="bar">
 
-    <div class="center">
-      <div class="address">742 River Ridge Drive • Decatur, AL</div>
-      <div class="details">3,140 Sq Ft • 4 Beds • 3 Baths • Offered at $525,000</div>
-    </div>
+<div class="left">
+<div class="name">Jennifer & Steve</div>
+<div class="team">The Namie Group</div>
+</div>
 
-    <div class="right">
-      <img src="LEREG%20FOR%20OVERLAY.png" alt="Leading Edge Logo">
-    </div>
-  </div>
+<div class="divider"></div>
+
+<div class="center">
+<div class="address">742 River Ridge Drive • Decatur, AL</div>
+<div class="details">3,140 Sq Ft • 4 Beds • 3 Baths • Offered at $525,000</div>
+</div>
+
+<div class="right">
+<img src="leadingedge.png">
+</div>
+
+</div>
+
 </body>
 </html>
