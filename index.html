@@ -3,184 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home Tour Overlay</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-
+  <title>Home Tour Overlay Test</title>
   <style>
-    :root {
-      --bar-height: 126px;
-      --bar-side-pad: 34px;
-      --bar-bottom: 0px;
-
-      --agent-script-size: 33px;
-      --team-size: 15px;
-
-      --address-size: 25px;
-      --details-size: 21px;
-
-      --logo-height: 92px;
-      --divider-width: 2px;
-      --divider-height: 74px;
-
-      --glass-bg: rgba(20, 20, 20, 0.34);
-      --glass-border: rgba(255, 255, 255, 0.14);
-      --text-main: rgba(255, 255, 255, 0.98);
-      --text-soft: rgba(255, 255, 255, 0.92);
-      --gold: #c9a24d;
-
-      --blur-amount: 12px;
-      --shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     html, body {
       margin: 0;
       width: 100%;
       height: 100%;
       background: transparent;
       overflow: hidden;
-    }
-
-    body {
-      font-family: "Montserrat", Arial, sans-serif;
-      color: var(--text-main);
-    }
-
-    .overlay-wrap {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
+      font-family: Arial, sans-serif;
     }
 
     .bar {
-      position: absolute;
+      position: fixed;
       left: 0;
       right: 0;
-      bottom: var(--bar-bottom);
-      height: var(--bar-height);
-
+      bottom: 0;
+      height: 100px;
+      background: rgba(0,0,0,0.55);
+      color: white;
       display: grid;
-      grid-template-columns: auto 2px 1fr auto;
+      grid-template-columns: 260px 2px 1fr 240px;
       align-items: center;
-      column-gap: 26px;
-
-      padding: 0 var(--bar-side-pad);
-
-      background: var(--glass-bg);
-      backdrop-filter: blur(var(--blur-amount));
-      -webkit-backdrop-filter: blur(var(--blur-amount));
-      border-top: 1px solid var(--glass-border);
-      box-shadow: var(--shadow);
+      column-gap: 24px;
+      padding: 0 28px;
+      box-sizing: border-box;
     }
 
-    .left-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 220px;
-      line-height: 1;
+    .left {
+      line-height: 1.1;
     }
 
-    .agent-name {
-      font-family: "Allura", cursive;
-      font-size: var(--agent-script-size);
-      color: var(--text-main);
-      line-height: 0.95;
-      margin: 0 0 3px 0;
-      white-space: nowrap;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
-    }
-
-    .team-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: var(--team-size);
+    .name {
+      font-size: 28px;
       font-weight: 600;
-      letter-spacing: 0.09em;
+    }
+
+    .team {
+      font-size: 15px;
       text-transform: uppercase;
-      color: var(--text-soft);
-      margin: 0;
-      white-space: nowrap;
+      letter-spacing: 0.08em;
+      opacity: 0.9;
     }
 
     .divider {
-      width: var(--divider-width);
-      height: var(--divider-height);
-      background: var(--gold);
-      border-radius: 2px;
-      align-self: center;
-      opacity: 0.95;
+      width: 2px;
+      height: 64px;
+      background: #c9a24d;
     }
 
-    .center-block {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 0;
-      gap: 8px;
+    .center {
+      line-height: 1.2;
     }
 
-    .address-line {
-      font-size: var(--address-size);
+    .address {
+      font-size: 24px;
       font-weight: 500;
-      color: var(--text-main);
-      line-height: 1.05;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
     }
 
-    .details-line {
-      font-size: var(--details-size);
-      font-weight: 500;
-      color: var(--text-soft);
-      line-height: 1.05;
+    .details {
+      font-size: 20px;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+      opacity: 0.92;
+      margin-top: 6px;
     }
 
-    .right-block {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      min-width: 220px;
+    .right {
+      text-align: right;
     }
 
-    .logo {
-      height: var(--logo-height);
+    .right img {
+      max-height: 78px;
       width: auto;
-      display: block;
-      object-fit: contain;
-      filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.18));
     }
   </style>
 </head>
 <body>
-  <div class="overlay-wrap">
-    <div class="bar">
-      <div class="left-block">
-        <div class="agent-name">Jennifer & Steve</div>
-        <div class="team-name">The Namie Group</div>
-      </div>
+  <div class="bar">
+    <div class="left">
+      <div class="name">Jennifer &amp; Steve</div>
+      <div class="team">The Namie Group</div>
+    </div>
 
-      <div class="divider"></div>
+    <div class="divider"></div>
 
-      <div class="center-block">
-        <div class="address-line">742 River Ridge Drive • Decatur, AL</div>
-        <div class="details-line">3,140 Sq Ft • 4 Beds • 3 Baths • Offered at $525,000</div>
-      </div>
+    <div class="center">
+      <div class="address">742 River Ridge Drive • Decatur, AL</div>
+      <div class="details">3,140 Sq Ft • 4 Beds • 3 Baths • Offered at $525,000</div>
+    </div>
 
-      <div class="right-block">
-        <img src="LEREG FOR OVERLAY.png" alt="Leading Edge Real Estate Group logo" class="logo" />
-      </div>
+    <div class="right">
+      <img src="LEREG%20FOR%20OVERLAY.png" alt="Leading Edge Logo">
     </div>
   </div>
 </body>
